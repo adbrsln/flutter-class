@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'mywidget.dart';
+import 'screenOne.dart';
+import 'screenTwo.dart';
+import 'screenThree.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,23 +10,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('First App'),
-        ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Column(
-              children: <Widget>[Text('column1'), Text('column1')],
-            ),
-            Column(
-              children: <Widget>[Text('column2'), Text('column2')],
-            ),
-            MyWidget()
-          ],
-        ),
-      ),
+      home: ScreenOne(),
+      routes: <String, WidgetBuilder>{
+        'main': (BuildContext context) => MyApp(),
+        'screen1': (BuildContext context) => ScreenTwo(),
+        'screen2': (BuildContext context) => ScreenThree()
+      },
     );
   }
 }

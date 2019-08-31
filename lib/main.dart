@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'mywidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,19 +12,17 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('First App'),
         ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 40,
-              ),
-              Text('Hellos World',
-                  style: TextStyle(fontSize: 30, color: Colors.purple[500])),
-              Text('how are you?',
-                  style: TextStyle(fontSize: 25, color: Colors.purple[300])),
-              Expanded(child: Image.asset('images/test.jpg'))
-            ],
-          ),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            Column(
+              children: <Widget>[Text('column1'), Text('column1')],
+            ),
+            Column(
+              children: <Widget>[Text('column2'), Text('column2')],
+            ),
+            MyWidget()
+          ],
         ),
       ),
     );

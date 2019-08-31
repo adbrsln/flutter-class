@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 
 void main() => runApp(MyApp());
 
@@ -8,31 +9,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       home: Scaffold(
-          appBar: AppBar(
-            title: Text('Material App Bar'),
+        appBar: AppBar(
+          title: Text('Material App Bar'),
+        ),
+        body: Center(
+          child: Container(
+            child: Text('Hello World'),
           ),
-          body: ListView(
-            children: <Widget>[
-              ListTile(
-                leading: Icon(Icons.map),
-                title: Text('Map'),
-                subtitle: Text('subtitle'),
-                trailing: Icon(Icons.delete),
-              ),
-              ListTile(
-                leading: Icon(Icons.photo_album),
-                title: Text('Album'),
-                subtitle: Text('subtitle'),
-                trailing: Icon(Icons.delete),
-              ),
-              ListTile(
-                leading: Icon(Icons.phone),
-                title: Text('Phone'),
-                subtitle: Text('subtitle'),
-                trailing: Icon(Icons.delete),
-              ),
-            ],
-          )),
+        ),
+      ),
     );
   }
 }
